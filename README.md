@@ -1,6 +1,18 @@
-# Getting Started with Create React App
+# Planday Grid
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+It renders a paginated list of images, 8 per page, that are fitted to cover, so the images are aliigned and evenly sized. It is possible to search for titles with the serach functionality. If a search finds matches, the results are filtered and displayed in the image list. If there is one result, a large image is displayed in it's actual dimensions. If there are no search results, an empty state is rendered.
+
+The solution is fully accessible and responsive.
+
+There were a few errors in the data that have been corrected.
+
+## Tech stack
+
+- Mui was used as the main component library as it offers clean design, well functioning and accessible out of the box components that are easy to use.
+- React context was used for the global state since it's very easy to set up and is the defualt global state tool for React JS.
+- React testing library and Jest was used for UI tests. Javascirpt was chosen for the tests due to lack of familiarity with Typescript.
 
 ## Available Scripts
 
@@ -28,19 +40,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
