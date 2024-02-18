@@ -2,13 +2,18 @@ import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import useAppContext from "../contexts/appContext";
 import { imageData } from "../data/imageData";
+import { fixTitle } from "../utilities/utilities";
 
 const Search = () => {
   const { searchValue, setSearchValue, searchInputValue, setSearchInputValue } =
     useAppContext();
 
   const options = imageData.map((image) => {
-    return { label: image.title, value: image.title, id: image.id };
+    return {
+      label: fixTitle(image.title),
+      value: fixTitle(image.title),
+      id: image.id,
+    };
   });
 
   return (

@@ -6,11 +6,15 @@ import ImageList from "../components/ImageList";
 
 const Grid = () => {
   return (
-    <>
+    <Box
+      sx={{
+        width: "90%",
+        maxWidth: 1292,
+      }}
+    >
       <Stack
         direction="row"
         sx={{
-          width: 320 * 4 + 4 * 3,
           marginBottom: 3,
           justifyContent: "space-between",
         }}
@@ -30,7 +34,6 @@ const Grid = () => {
       </Stack>
       <Box
         sx={{
-          width: 320 * 4 + 4 * 3,
           height: "75vh",
           overflowY: "scroll",
           marginBottom: 2,
@@ -41,7 +44,7 @@ const Grid = () => {
       >
         <ImageList />
       </Box>
-    </>
+    </Box>
   );
 };
 
