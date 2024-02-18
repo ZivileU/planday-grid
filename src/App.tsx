@@ -1,17 +1,17 @@
 import React from "react";
 import Pagination from "./components/Pagination";
 import Grid from "./components/Grid";
-import { PaginationProvider } from "./contexts/paginationContext";
+import { AppProvider } from "./contexts/appContext";
 import "./App.css";
 
 const App = () => {
   return (
-    <PaginationProvider>
+    <AppProvider>
       <div className="App">
         <Grid />
         <Pagination />
       </div>
-    </PaginationProvider>
+    </AppProvider>
   );
 };
 

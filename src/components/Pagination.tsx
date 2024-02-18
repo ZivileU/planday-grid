@@ -2,7 +2,7 @@ import React from "react";
 import { default as MUIPagination } from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import { imageData } from "../data/imageData";
-import usePaginationContext from "../contexts/paginationContext";
+import usePaginationContext from "../contexts/appContext";
 
 const Pagination = () => {
   const { page, setPage } = usePaginationContext();
@@ -11,7 +11,7 @@ const Pagination = () => {
     setPage(value);
   };
 
-  const pagesTotal = Math.floor(imageData.length / 6); // we are showing 5 images per page
+  const pagesTotal = Math.ceil(imageData.length / 8); // we are showing 8 images per page
 
   return (
     <Stack spacing={2}>

@@ -3,41 +3,54 @@ import ImageListItem from "@mui/material/ImageListItem";
 import ImageListItemBar from "@mui/material/ImageListItemBar";
 import ListSubheader from "@mui/material/ListSubheader";
 import Box from "@mui/material/Box";
-import usePaginationContext from "../contexts/paginationContext";
+import Stack from "@mui/material/Stack";
+import useAppContext from "../contexts/appContext";
+import Search from "../components/Search";
 import { imageData } from "../data/imageData";
 
 const Grid = () => {
-  const { page } = usePaginationContext();
+  const { page } = useAppContext();
 
   const fixedPath = (path: string) => {
     return path.replaceAll("amp;", "").replace("&ixlib", "?&ixlib");
   };
 
-  const offset = 2 + 5 * (page - 1);
+  const offset = 3 + 8 * (page - 1);
 
   return (
     <>
-      <ListSubheader
-        component="div"
+      <Stack
+        direction="row"
         sx={{
-          color: "text.primary",
-          fontWeight: "bold",
-          fontSize: 32,
+          width: 320 * 4 + 4 * 3,
+          marginBottom: 3,
+          justifyContent: "space-between",
         }}
       >
-        Planday Grid
-      </ListSubheader>
+        <ListSubheader
+          component="div"
+          sx={{
+            color: "text.primary",
+            fontWeight: "bold",
+            paddingLeft: 0,
+            fontSize: 32,
+          }}
+        >
+          Planday Grid
+        </ListSubheader>
+        <Search />
+      </Stack>
       <Box
         sx={{
-          width: 360 * 3 + 4 * 2,
+          width: 320 * 4 + 4 * 3,
           height: "75vh",
           overflowY: "scroll",
           marginBottom: 2,
         }}
       >
-        <ImageList cols={3} gap={4}>
-          {imageData.slice(offset - 2, offset + 4).map((image) => (
-            <ImageListItem key={image.imagePath}>
+        <ImageList cols={4} gap={4} sx={{ margin: 0 }}>
+          {imageData.slice(offset - 3, offset + 5).map((image) => (
+            <ImageListItem key={image.id}>
               <img
                 src={fixedPath(image.imagePath)}
                 alt={image.title}
