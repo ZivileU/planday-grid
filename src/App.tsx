@@ -7,7 +7,7 @@ import "./App.css";
 const App = () => {
   return (
     <AppProvider>
-      <div className="App">
+      <div className="App" data-testid="app">
         <Grid />
         <Pagination />
       </div>

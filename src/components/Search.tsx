@@ -19,6 +19,7 @@ const Search = () => {
   return (
     <Autocomplete
       sx={{ width: 300 }}
+      id="search"
       value={searchValue}
       options={options}
       getOptionKey={(option) => option.id}

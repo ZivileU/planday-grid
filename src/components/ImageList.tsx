@@ -9,7 +9,6 @@ import { fixPath, fixTitle, imagesToShow } from "../utilities/utilities";
 
 const ImageList = () => {
   const { page, searchValue, searchInputValue } = useAppContext();
-
   const theme = useTheme();
   const scaleDownLg = useMediaQuery(theme.breakpoints.down("lg"));
 
@@ -26,22 +25,19 @@ const ImageList = () => {
       sx={{ margin: 0 }}
     >
       {images.map((image) => (
-        <ImageListItem key={image.id} sx={{}}>
+        <ImageListItem key={image.id} data-testid="image">
           <img
             src={fixPath(image.imagePath)}
             alt={image.title}
             loading="lazy"
             style={{
               maxHeight: "75vh",
-              objectFit: images.length === 1 ? "contain" : "cover",
             }}
           />
-          {images.length > 1 && (
-            <ImageListItemBar
-              title={fixTitle(image.title)}
-              subtitle={fixTitle(image.description)}
-            />
-          )}
+          <ImageListItemBar
+            title={fixTitle(image.title)}
+            subtitle={fixTitle(image.description)}
+          />
         </ImageListItem>
       ))}
     </MUIImageList>

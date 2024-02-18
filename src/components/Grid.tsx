@@ -1,10 +1,15 @@
 import ListSubheader from "@mui/material/ListSubheader";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import Search from "../components/Search";
 import ImageList from "../components/ImageList";
 
 const Grid = () => {
+  const theme = useTheme();
+  const scaleDownLg = useMediaQuery(theme.breakpoints.down("lg"));
+
   return (
     <Box
       sx={{
@@ -34,7 +39,7 @@ const Grid = () => {
       </Stack>
       <Box
         sx={{
-          height: "75vh",
+          height: scaleDownLg ? "100vh" : "75vh",
           overflowY: "scroll",
           marginBottom: 2,
           display: "flex",
